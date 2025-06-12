@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_allesCopieren_FILE /Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/allesCopieren.app/Contents/MacOS/allesCopieren)
+set(__QT_DEPLOY_TARGET_allesCopieren_TYPE EXECUTABLE)

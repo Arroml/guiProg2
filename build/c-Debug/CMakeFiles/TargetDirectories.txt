@@ -1,0 +1,9 @@
+/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles/allesCopieren.dir
+/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles/edit_cache.dir
+/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles/rebuild_cache.dir
+/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles/list_install_components.dir
+/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles/install.dir
+/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles/install/local.dir
+/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles/install/strip.dir
+/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles/allesCopieren_autogen_timestamp_deps.dir
+/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles/allesCopieren_autogen.dir
