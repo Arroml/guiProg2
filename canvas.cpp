@@ -3,6 +3,7 @@
 #include <QDebug>
 #include "canvas.h"
 #include "button.h"
+#include "container.h"
 
 Canvas::Canvas(QWidget *parent)
     : QFrame(parent)
@@ -33,7 +34,8 @@ QSize Canvas::sizeHint() const
 
 void Canvas::clearCanvas(void)
 {
-    // TODO
+    components.clear();
+    update();
 }
 
 void Canvas::setWidgetMode(int mode)
@@ -41,8 +43,32 @@ void Canvas::setWidgetMode(int mode)
     type = (Canvas::WidgetMode)mode;
 
     if (type != NONE) {
-        // TODO; if no "widget" root node is set, create one
+        if (components.empty()) {
+            Component *root = nullptr;
+
+            switch (type) {
+            case BUTTON:
+                break;
+            case CONTAINER:
+            {
+                QPoint start(20,20);
+                QPoint end(this->width()-20, this->height()-60);
+                root = new Container(start, end, Qt::darkGray);
+
+                break;
+            }
+            default:
+                break;
+            }
+
+            if (root != nullptr) {
+                components.push_back(root);
+                qDebug() << "Root wurde erstellt.";
+            }
+        }
     }
+
+    update(); // neu zeichnen
 }
 
 void Canvas::setInteractionMode(bool mode)

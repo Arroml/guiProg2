@@ -18,9 +18,11 @@ Paint::Paint(QWidget *parent)
     // Menüleiste erstellen
     QMenuBar * menuBar = new QMenuBar(this);
     QMenu *fileMenu = new QMenu("File", this);
+
     QAction *loadFile = fileMenu->addAction("Load File");
     QAction *saveFile = fileMenu->addAction("Save File");
     QAction *quit = fileMenu->addAction("Save File");
+
     connect(loadFile, &QAction::triggered, this, [](){
         qDebug() << "Load File wurde gedrückt";
     });
