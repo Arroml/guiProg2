@@ -40,6 +40,7 @@ private:
     bool design;
     WidgetMode type;
     std::vector<Component*> components;
+    Component* tempComponent = nullptr;
 
 
 };

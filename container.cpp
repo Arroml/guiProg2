@@ -13,9 +13,10 @@ void Container::addComponent(Component* component){
 }
 
 void Container::display(QPainter* painter){
-    painter->setBrush(color);
-    painter->drawRect(QRect(start,end));
-
+    QRect rect = QRect(start, end).normalized();
+    painter->setPen(Qt::gray);
+    painter->setBrush(Qt::NoBrush);
+    painter->drawRect(rect);
     for (Component*i : components){
         i->display(painter);
     }

@@ -3,8 +3,11 @@
 Button::Button(QPoint start, QPoint end, QColor color):Component(start,end,color) {}
 
 void Button::display(QPainter* painter){
-    painter->setBrush(color);
-    painter->drawRect(QRect(start, end));
+    QRect rect = QRect(start, end).normalized();
+    painter->setPen(Qt::black);
+    painter->setBrush(Qt::NoBrush);
+    painter->drawRect(rect);
+    painter->drawText(rect.adjusted(5, 5, -5, -5), Qt::AlignLeft | Qt::AlignTop, "Button");
 }
 
 void Button::update(QPoint& point, bool done){

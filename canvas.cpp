@@ -47,8 +47,6 @@ void Canvas::setWidgetMode(int mode)
             Component *root = nullptr;
 
             switch (type) {
-            case BUTTON:
-                break;
             case CONTAINER:
             {
                 QPoint start(20,20);
@@ -90,6 +88,14 @@ void Canvas::paintEvent(QPaintEvent *event)
     // white background (inside parent's border)
     painter.fillRect(QRect(1, 1, width() - 2, height() - 2), Qt::white);
 
+    for (Component* c : components) {
+        c->display(&painter);
+    }
+
+    if (tempComponent) {
+        tempComponent->display(&painter);
+    }
+
 }
 
 void Canvas::resizeEvent(QResizeEvent *event)
@@ -99,9 +105,10 @@ void Canvas::resizeEvent(QResizeEvent *event)
 
 void Canvas::mousePressEvent(QMouseEvent *event)
 {
+
     if (event->button() == Qt::LeftButton) {
         QPoint currPos = event->pos();
-        //qDebug() << currPos;
+        qDebug() << currPos;
 
         dragging = true;
         lastPos = currPos;
@@ -112,20 +119,27 @@ void Canvas::mousePressEvent(QMouseEvent *event)
             switch (type) {
             case BUTTON:
             {
-                Button* button = new Button(currPos, currPos, activeCol);
-                components.push_back(button);
+                tempComponent = new Button(currPos, currPos, Qt::black);
                 break;
             }
             case CONTAINER:{
-                Container*container = new Container(currPos, currPos, activeCol);
-                components.push_back(container);
-                break;
-            }
-            case NONE:{
+                tempComponent = new Container(currPos, currPos, Qt::black);
                 break;
             }
             default:
                 break;
+            }
+            if (tempComponent){
+                for (Component *comp : components) {
+                    Container *container = dynamic_cast<Container *>(comp);
+                    if (container && container->inside(currPos)) {
+                        container->addComponent(tempComponent);
+                        qDebug() << "Komponente wurde in Container eingefügt";
+                        return;
+                    }
+                }
+                components.push_back(tempComponent);
+                qDebug() << "Komponente wurde zu Canvas hinzgefügt";
             }
         }
 
@@ -141,6 +155,7 @@ void Canvas::mouseMoveEvent(QMouseEvent *event)
 
         if (design) {
             // TODO; update size of widget
+            tempComponent->update(currPos);
         }
         lastPos = currPos;
 
@@ -152,15 +167,31 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton && dragging) {
         QPoint currPos = event->pos();
-        //qDebug() << currPos;
+        qDebug() << currPos;
 
         dragging = false;
 
         if (design) {
-            // TODO; finalize created widget
-        }
-        lastPos = currPos;
+            tempComponent->update(currPos);  // setze Endpunkt final
+            qDebug() << "Finale Position gesetzt";
 
-        update();
+            // versuche es in einen Container einzufügen
+            bool added = false;
+            for (Component* c : components) {
+                if (Container* cont = dynamic_cast<Container*>(c)) {
+                    if (cont->inside(lastPos)) {
+                        cont->addComponent(tempComponent);
+                        added = true;
+                        break;
+                    }
+                }
+                // TODO; finalize created widget
+
+            }
+            lastPos = currPos;
+
+            update();
+        }
     }
+
 }
