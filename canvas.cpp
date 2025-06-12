@@ -2,6 +2,7 @@
 #include <QMouseEvent>
 #include <QDebug>
 #include "canvas.h"
+#include "button.h"
 
 Canvas::Canvas(QWidget *parent)
     : QFrame(parent)
@@ -63,7 +64,6 @@ void Canvas::paintEvent(QPaintEvent *event)
     // white background (inside parent's border)
     painter.fillRect(QRect(1, 1, width() - 2, height() - 2), Qt::white);
 
-    // TODO; draw all own "widgets"
 }
 
 void Canvas::resizeEvent(QResizeEvent *event)
@@ -82,6 +82,25 @@ void Canvas::mousePressEvent(QMouseEvent *event)
 
         if (design) {
             // TODO; create new "widget" according to type
+
+            switch (type) {
+            case BUTTON:
+            {
+                Button* button = new Button(currPos, currPos, activeCol);
+                components.push_back(button);
+                break;
+            }
+            case CONTAINER:{
+                Container*container = new Container(currPos, currPos, activeCol);
+                components.push_back(container);
+                break;
+            }
+            case NONE:{
+                break;
+            }
+            default:
+                break;
+            }
         }
 
         update();

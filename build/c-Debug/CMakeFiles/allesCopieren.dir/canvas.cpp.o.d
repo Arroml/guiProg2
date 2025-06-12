@@ -1168,4 +1168,7 @@ CMakeFiles/allesCopieren.dir/canvas.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/QPoint \
   /opt/homebrew/lib/QtCore.framework/Headers/qpoint.h \
   /opt/homebrew/lib/QtGui.framework/Headers/QColor \
-  /opt/homebrew/lib/QtGui.framework/Headers/qcolor.h
+  /opt/homebrew/lib/QtGui.framework/Headers/qcolor.h \
+  /Users/alexanderroman/Projekte/prog2/allesCopieren/component.h \
+  /Users/alexanderroman/Projekte/prog2/allesCopieren/container.h \
+  /Users/alexanderroman/Projekte/prog2/allesCopieren/button.h

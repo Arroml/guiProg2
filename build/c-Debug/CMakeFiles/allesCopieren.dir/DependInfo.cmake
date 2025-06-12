@@ -15,7 +15,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/alexanderroman/Projekte/prog2/allesCopieren/component.cpp" "CMakeFiles/allesCopieren.dir/component.cpp.o" "gcc" "CMakeFiles/allesCopieren.dir/component.cpp.o.d"
   "/Users/alexanderroman/Projekte/prog2/allesCopieren/container.cpp" "CMakeFiles/allesCopieren.dir/container.cpp.o" "gcc" "CMakeFiles/allesCopieren.dir/container.cpp.o.d"
   "/Users/alexanderroman/Projekte/prog2/allesCopieren/main.cpp" "CMakeFiles/allesCopieren.dir/main.cpp.o" "gcc" "CMakeFiles/allesCopieren.dir/main.cpp.o.d"
-  "/Users/alexanderroman/Projekte/prog2/allesCopieren/mainwindow.cpp" "CMakeFiles/allesCopieren.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/allesCopieren.dir/mainwindow.cpp.o.d"
   "/Users/alexanderroman/Projekte/prog2/allesCopieren/paint.cpp" "CMakeFiles/allesCopieren.dir/paint.cpp.o" "gcc" "CMakeFiles/allesCopieren.dir/paint.cpp.o.d"
   )
 

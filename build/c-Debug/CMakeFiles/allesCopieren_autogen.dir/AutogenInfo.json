@@ -463,12 +463,6 @@
 			null
 		],
 		[
-			"/Users/alexanderroman/Projekte/prog2/allesCopieren/mainwindow.h",
-			"MU",
-			"EWIEGA46WW/moc_mainwindow.cpp",
-			null
-		],
-		[
 			"/Users/alexanderroman/Projekte/prog2/allesCopieren/paint.h",
 			"MU",
 			"EWIEGA46WW/moc_paint.cpp",
@@ -556,11 +550,6 @@
 		],
 		[
 			"/Users/alexanderroman/Projekte/prog2/allesCopieren/main.cpp",
-			"MU",
-			null
-		],
-		[
-			"/Users/alexanderroman/Projekte/prog2/allesCopieren/mainwindow.cpp",
 			"MU",
 			null
 		],

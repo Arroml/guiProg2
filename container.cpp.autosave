@@ -1,3 +1,0 @@
-#include "container.h"
-
-Container::Container(QPoint start, QPoint end, QColor color): Component(start,end,color) {}

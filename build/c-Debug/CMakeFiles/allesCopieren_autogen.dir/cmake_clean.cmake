@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/allesCopieren_autogen"
-  "allesCopieren_autogen/include/ui_mainwindow.h"
   "allesCopieren_autogen/mocs_compilation.cpp"
   "allesCopieren_autogen/timestamp"
 )

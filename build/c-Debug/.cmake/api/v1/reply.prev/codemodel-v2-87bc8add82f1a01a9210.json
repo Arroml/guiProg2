@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-2ff101eb6b0c6b3c7bd2.json",
+					"jsonFile" : "directory-.-Debug-6a76a042d7c7c0416795.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "allesCopieren::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-allesCopieren-Debug-67a5242eb03124782390.json",
+					"jsonFile" : "target-allesCopieren-Debug-06302ca61afa9a461642.json",
 					"name" : "allesCopieren",
 					"projectIndex" : 0
 				},

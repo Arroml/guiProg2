@@ -14,9 +14,9 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+
+
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -28,7 +28,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         component.h component.cpp
         button.h button.cpp
         container.h container.cpp
-    )
+        canvas.cpp canvas.h
+
+     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET allesCopieren APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
 #                 ${CMAKE_CURRENT_SOURCE_DIR}/android)

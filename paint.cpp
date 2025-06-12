@@ -6,6 +6,8 @@
 #include <QGridLayout>
 #include <QCheckBox>
 #include <QDebug>
+#include <QMenuBar>
+#include <QMenu>
 #include "paint.h"
 #include "canvas.h"
 
@@ -13,6 +15,25 @@
 Paint::Paint(QWidget *parent)
     : QWidget(parent)
 {
+    // Menüleiste erstellen
+    QMenuBar * menuBar = new QMenuBar(this);
+    QMenu *fileMenu = new QMenu("File", this);
+    QAction *loadFile = fileMenu->addAction("Load File");
+    QAction *saveFile = fileMenu->addAction("Save File");
+    QAction *quit = fileMenu->addAction("Save File");
+    connect(loadFile, &QAction::triggered, this, [](){
+        qDebug() << "Load File wurde gedrückt";
+    });
+    connect(saveFile, &QAction::triggered, this, [](){
+        qDebug() << "save File Wurde gedrückt";
+    });
+    connect(quit, &QAction::triggered, this, &QWidget::close);
+
+    menuBar->addMenu(fileMenu);
+
+
+    // z. B. mainLayout->addWidget(viewport); usw.
+
     // instantiate Canvas and widgets
     viewport = new Canvas();
 
@@ -38,6 +59,7 @@ Paint::Paint(QWidget *parent)
     // create layout and add gui elements to it
     QGridLayout *mainLayout = new QGridLayout;
 
+    mainLayout->setMenuBar(menuBar);
     mainLayout->addWidget(viewport,       0, 0, 1, 3);
     mainLayout->addWidget(btnClearCanvas, 1, 0);
     mainLayout->addWidget(lblWidgetModes, 1, 1, Qt::AlignRight);

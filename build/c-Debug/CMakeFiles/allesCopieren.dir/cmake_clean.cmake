@@ -14,8 +14,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/allesCopieren.dir/container.cpp.o.d"
   "CMakeFiles/allesCopieren.dir/main.cpp.o"
   "CMakeFiles/allesCopieren.dir/main.cpp.o.d"
-  "CMakeFiles/allesCopieren.dir/mainwindow.cpp.o"
-  "CMakeFiles/allesCopieren.dir/mainwindow.cpp.o.d"
   "CMakeFiles/allesCopieren.dir/paint.cpp.o"
   "CMakeFiles/allesCopieren.dir/paint.cpp.o.d"
   "allesCopieren.app/Contents/MacOS/allesCopieren"

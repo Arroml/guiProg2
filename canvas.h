@@ -3,6 +3,9 @@
 #include <QFrame>
 #include <QPoint>
 #include <QColor>
+#include <vector>
+#include "component.h"
+#include "container.h"
 
 class Canvas : public QFrame
 {
@@ -36,6 +39,9 @@ private:
     QColor activeCol;
     bool design;
     WidgetMode type;
+    std::vector<Component*> components;
+
+
 };
 
 #endif // CANVAS_H

@@ -1135,15 +1135,16 @@ CMakeFiles/allesCopieren.dir/allesCopieren_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/qpoint.h \
   /opt/homebrew/lib/QtGui.framework/Headers/QColor \
   /opt/homebrew/lib/QtGui.framework/Headers/qcolor.h \
+  /Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/allesCopieren_autogen/EWIEGA46WW/../../../../component.h \
+  /opt/homebrew/lib/QtGui.framework/Headers/QPainter \
+  /opt/homebrew/lib/QtGui.framework/Headers/qpainter.h \
+  /opt/homebrew/include/QtGui/qtextoption.h \
+  /opt/homebrew/include/QtGui/qpen.h \
+  /Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/allesCopieren_autogen/EWIEGA46WW/../../../../container.h \
   /opt/homebrew/include/QtCore/qtmochelpers.h \
   /opt/homebrew/include/QtCore/qtmocconstants.h \
   /opt/homebrew/include/QtCore/q20algorithm.h \
   /opt/homebrew/include/QtCore/q23type_traits.h \
-  /Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/allesCopieren_autogen/EWIEGA46WW/moc_mainwindow.cpp \
-  /Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/allesCopieren_autogen/EWIEGA46WW/../../../../mainwindow.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QMainWindow \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qmainwindow.h \
-  /opt/homebrew/include/QtWidgets/qtabwidget.h \
   /Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/allesCopieren_autogen/EWIEGA46WW/moc_paint.cpp \
   /Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/allesCopieren_autogen/EWIEGA46WW/../../../../paint.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \

@@ -104,24 +104,10 @@ CMakeFiles/allesCopieren.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/allesCopieren.dir/main.cpp.s"
 	/usr/bin/llvm-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexanderroman/Projekte/prog2/allesCopieren/main.cpp -o CMakeFiles/allesCopieren.dir/main.cpp.s
 
-CMakeFiles/allesCopieren.dir/mainwindow.cpp.o: CMakeFiles/allesCopieren.dir/flags.make
-CMakeFiles/allesCopieren.dir/mainwindow.cpp.o: /Users/alexanderroman/Projekte/prog2/allesCopieren/mainwindow.cpp
-CMakeFiles/allesCopieren.dir/mainwindow.cpp.o: CMakeFiles/allesCopieren.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/allesCopieren.dir/mainwindow.cpp.o"
-	/usr/bin/llvm-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/allesCopieren.dir/mainwindow.cpp.o -MF CMakeFiles/allesCopieren.dir/mainwindow.cpp.o.d -o CMakeFiles/allesCopieren.dir/mainwindow.cpp.o -c /Users/alexanderroman/Projekte/prog2/allesCopieren/mainwindow.cpp
-
-CMakeFiles/allesCopieren.dir/mainwindow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/allesCopieren.dir/mainwindow.cpp.i"
-	/usr/bin/llvm-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/alexanderroman/Projekte/prog2/allesCopieren/mainwindow.cpp > CMakeFiles/allesCopieren.dir/mainwindow.cpp.i
-
-CMakeFiles/allesCopieren.dir/mainwindow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/allesCopieren.dir/mainwindow.cpp.s"
-	/usr/bin/llvm-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/alexanderroman/Projekte/prog2/allesCopieren/mainwindow.cpp -o CMakeFiles/allesCopieren.dir/mainwindow.cpp.s
-
 CMakeFiles/allesCopieren.dir/paint.cpp.o: CMakeFiles/allesCopieren.dir/flags.make
 CMakeFiles/allesCopieren.dir/paint.cpp.o: /Users/alexanderroman/Projekte/prog2/allesCopieren/paint.cpp
 CMakeFiles/allesCopieren.dir/paint.cpp.o: CMakeFiles/allesCopieren.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/allesCopieren.dir/paint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/allesCopieren.dir/paint.cpp.o"
 	/usr/bin/llvm-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/allesCopieren.dir/paint.cpp.o -MF CMakeFiles/allesCopieren.dir/paint.cpp.o.d -o CMakeFiles/allesCopieren.dir/paint.cpp.o -c /Users/alexanderroman/Projekte/prog2/allesCopieren/paint.cpp
 
 CMakeFiles/allesCopieren.dir/paint.cpp.i: cmake_force
@@ -135,7 +121,7 @@ CMakeFiles/allesCopieren.dir/paint.cpp.s: cmake_force
 CMakeFiles/allesCopieren.dir/canvas.cpp.o: CMakeFiles/allesCopieren.dir/flags.make
 CMakeFiles/allesCopieren.dir/canvas.cpp.o: /Users/alexanderroman/Projekte/prog2/allesCopieren/canvas.cpp
 CMakeFiles/allesCopieren.dir/canvas.cpp.o: CMakeFiles/allesCopieren.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/allesCopieren.dir/canvas.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/allesCopieren.dir/canvas.cpp.o"
 	/usr/bin/llvm-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/allesCopieren.dir/canvas.cpp.o -MF CMakeFiles/allesCopieren.dir/canvas.cpp.o.d -o CMakeFiles/allesCopieren.dir/canvas.cpp.o -c /Users/alexanderroman/Projekte/prog2/allesCopieren/canvas.cpp
 
 CMakeFiles/allesCopieren.dir/canvas.cpp.i: cmake_force
@@ -149,7 +135,7 @@ CMakeFiles/allesCopieren.dir/canvas.cpp.s: cmake_force
 CMakeFiles/allesCopieren.dir/component.cpp.o: CMakeFiles/allesCopieren.dir/flags.make
 CMakeFiles/allesCopieren.dir/component.cpp.o: /Users/alexanderroman/Projekte/prog2/allesCopieren/component.cpp
 CMakeFiles/allesCopieren.dir/component.cpp.o: CMakeFiles/allesCopieren.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/allesCopieren.dir/component.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/allesCopieren.dir/component.cpp.o"
 	/usr/bin/llvm-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/allesCopieren.dir/component.cpp.o -MF CMakeFiles/allesCopieren.dir/component.cpp.o.d -o CMakeFiles/allesCopieren.dir/component.cpp.o -c /Users/alexanderroman/Projekte/prog2/allesCopieren/component.cpp
 
 CMakeFiles/allesCopieren.dir/component.cpp.i: cmake_force
@@ -163,7 +149,7 @@ CMakeFiles/allesCopieren.dir/component.cpp.s: cmake_force
 CMakeFiles/allesCopieren.dir/button.cpp.o: CMakeFiles/allesCopieren.dir/flags.make
 CMakeFiles/allesCopieren.dir/button.cpp.o: /Users/alexanderroman/Projekte/prog2/allesCopieren/button.cpp
 CMakeFiles/allesCopieren.dir/button.cpp.o: CMakeFiles/allesCopieren.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/allesCopieren.dir/button.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/allesCopieren.dir/button.cpp.o"
 	/usr/bin/llvm-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/allesCopieren.dir/button.cpp.o -MF CMakeFiles/allesCopieren.dir/button.cpp.o.d -o CMakeFiles/allesCopieren.dir/button.cpp.o -c /Users/alexanderroman/Projekte/prog2/allesCopieren/button.cpp
 
 CMakeFiles/allesCopieren.dir/button.cpp.i: cmake_force
@@ -177,7 +163,7 @@ CMakeFiles/allesCopieren.dir/button.cpp.s: cmake_force
 CMakeFiles/allesCopieren.dir/container.cpp.o: CMakeFiles/allesCopieren.dir/flags.make
 CMakeFiles/allesCopieren.dir/container.cpp.o: /Users/alexanderroman/Projekte/prog2/allesCopieren/container.cpp
 CMakeFiles/allesCopieren.dir/container.cpp.o: CMakeFiles/allesCopieren.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/allesCopieren.dir/container.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/allesCopieren.dir/container.cpp.o"
 	/usr/bin/llvm-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/allesCopieren.dir/container.cpp.o -MF CMakeFiles/allesCopieren.dir/container.cpp.o.d -o CMakeFiles/allesCopieren.dir/container.cpp.o -c /Users/alexanderroman/Projekte/prog2/allesCopieren/container.cpp
 
 CMakeFiles/allesCopieren.dir/container.cpp.i: cmake_force
@@ -192,7 +178,6 @@ CMakeFiles/allesCopieren.dir/container.cpp.s: cmake_force
 allesCopieren_OBJECTS = \
 "CMakeFiles/allesCopieren.dir/allesCopieren_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/allesCopieren.dir/main.cpp.o" \
-"CMakeFiles/allesCopieren.dir/mainwindow.cpp.o" \
 "CMakeFiles/allesCopieren.dir/paint.cpp.o" \
 "CMakeFiles/allesCopieren.dir/canvas.cpp.o" \
 "CMakeFiles/allesCopieren.dir/component.cpp.o" \
@@ -204,7 +189,6 @@ allesCopieren_EXTERNAL_OBJECTS =
 
 allesCopieren.app/Contents/MacOS/allesCopieren: CMakeFiles/allesCopieren.dir/allesCopieren_autogen/mocs_compilation.cpp.o
 allesCopieren.app/Contents/MacOS/allesCopieren: CMakeFiles/allesCopieren.dir/main.cpp.o
-allesCopieren.app/Contents/MacOS/allesCopieren: CMakeFiles/allesCopieren.dir/mainwindow.cpp.o
 allesCopieren.app/Contents/MacOS/allesCopieren: CMakeFiles/allesCopieren.dir/paint.cpp.o
 allesCopieren.app/Contents/MacOS/allesCopieren: CMakeFiles/allesCopieren.dir/canvas.cpp.o
 allesCopieren.app/Contents/MacOS/allesCopieren: CMakeFiles/allesCopieren.dir/component.cpp.o
@@ -215,7 +199,7 @@ allesCopieren.app/Contents/MacOS/allesCopieren: /opt/homebrew/lib/QtWidgets.fram
 allesCopieren.app/Contents/MacOS/allesCopieren: /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui
 allesCopieren.app/Contents/MacOS/allesCopieren: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
 allesCopieren.app/Contents/MacOS/allesCopieren: CMakeFiles/allesCopieren.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable allesCopieren.app/Contents/MacOS/allesCopieren"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable allesCopieren.app/Contents/MacOS/allesCopieren"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/allesCopieren.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
