@@ -1,6 +1,7 @@
 #include <QPainter>
 #include <QMouseEvent>
 #include <QDebug>
+#include <typeinfo>
 #include "canvas.h"
 #include "button.h"
 #include "container.h"
@@ -158,7 +159,10 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
         tempComponent->update(currPos);
         qDebug() << "Finale Position gesetzt";
         qDebug() << currPos;
-        
+
+        QPoint start = tempComponent->getStartPoint();
+        Component * rootContainer = tempComponent->inside(start);
+
         dragging = false;
 
         if (design) {
