@@ -6,5 +6,12 @@ Component::~Component(){
 
 }
 
+std::string Component::getStartSting(){
+    return std::to_string(start.x()) + " " + std::to_string(start.y());
+}
+
+std::string Component::getEndString(){
+    return std::to_string(start.x()) + " " + std::to_string(start.y());
+}
 
 

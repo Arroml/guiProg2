@@ -16,8 +16,8 @@ public:
     virtual void update(QPoint& pint, bool done = false) = 0;
     virtual Component* inside(QPoint& point) = 0;
     std::string getStartSting();
-    std::string getEndString;
-    QPoint getStart();
+    std::string getEndString();
+    QPoint getStartPoint();
 
 };
 
