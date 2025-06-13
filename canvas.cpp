@@ -35,6 +35,7 @@ QSize Canvas::sizeHint() const
 void Canvas::clearCanvas(void)
 {
     components.clear();
+    tempComponent = nullptr;
     update();
 }
 
@@ -154,15 +155,14 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton && dragging) {
         QPoint currPos = event->pos();
+        tempComponent->update(currPos);
+        qDebug() << "Finale Position gesetzt";
         qDebug() << currPos;
-
+        
         dragging = false;
 
         if (design) {
-            tempComponent->update(currPos);
-            qDebug() << "Finale Position gesetzt";
-
-
+            
             update();
         }
     }
