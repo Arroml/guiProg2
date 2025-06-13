@@ -117,7 +117,15 @@ void Node::printNodeInFile(std::ofstream &of, int level, FileType file)
         if (name[0] == ' ') {
             name.erase(name.begin());
         }
-        of << "<" << name;
+        if (!children.empty()){
+            of << "<" << name;
+        }
+        else {
+            for (int i = 0; i < level-1; i++) {
+                of << "  ";
+            }
+            of << "<" << name;
+        }
 
         if (!this->Attribute.empty()) {
             for (auto &[key, value] : Attribute) {
@@ -127,6 +135,9 @@ void Node::printNodeInFile(std::ofstream &of, int level, FileType file)
         // children-Block
         if (children.empty()) {
             of << "/>\n";
+            for (int i = 0; i < level-2; i++) {
+                of << "  ";
+            }
         } else {
             of << ">\n";
             for (int i = 0; i < level + 1; i++) {
@@ -141,8 +152,7 @@ void Node::printNodeInFile(std::ofstream &of, int level, FileType file)
 
             of << "</" << name << ">\n";
         }
-
-    } break;
+    }break;
     case NONE: {
         std::cout << "keine Datei" << std::endl;
         break;

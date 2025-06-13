@@ -4,6 +4,7 @@
 #include <QPainter>
 #include "button.h"
 #include "container.h"
+#include "Node.h"
 #include <typeinfo>
 
 Canvas::Canvas(QWidget *parent)
@@ -154,6 +155,8 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
         tempComponent->update(currPos);
         qDebug() << "Finale Position gesetzt";
         qDebug() << currPos;
+
+        Node node(type==BUTTON? "Button" : "Container");
 
         QPoint start = tempComponent->getStartPoint();
 
