@@ -1,10 +1,10 @@
-#include <QPainter>
-#include <QMouseEvent>
-#include <QDebug>
-#include <typeinfo>
 #include "canvas.h"
+#include <QDebug>
+#include <QMouseEvent>
+#include <QPainter>
 #include "button.h"
 #include "container.h"
+#include <typeinfo>
 
 Canvas::Canvas(QWidget *parent)
     : QFrame(parent)
@@ -19,9 +19,7 @@ Canvas::Canvas(QWidget *parent)
     // TODO; init of own members
 }
 
-Canvas::~Canvas()
-{
-}
+Canvas::~Canvas() {}
 
 QSize Canvas::minimumSizeHint() const
 {
@@ -42,12 +40,12 @@ void Canvas::clearCanvas(void)
 
 void Canvas::setWidgetMode(int mode)
 {
-    type = (Canvas::WidgetMode)mode;
+    type = (Canvas::WidgetMode) mode;
 
     if (type != NONE) {
         if (components.empty()) {
             Component *root = nullptr;
-            root = new Container(QPoint(0,0), QPoint(width(),height()), Qt::darkGray);
+            root = new Container(QPoint(0, 0), QPoint(width(), height()), Qt::darkGray);
             if (root != nullptr) {
                 components.push_back(root);
                 qDebug() << "Root wurde erstellt.";
@@ -70,21 +68,20 @@ void Canvas::setObjColor(const QColor &col)
 
 void Canvas::paintEvent(QPaintEvent *event)
 {
-    QFrame::paintEvent(event);  // parent class draws border
+    QFrame::paintEvent(event); // parent class draws border
 
     QPainter painter(this);
 
     // white background (inside parent's border)
     painter.fillRect(QRect(1, 1, width() - 2, height() - 2), Qt::white);
 
-    for (Component* c : components) {
+    for (Component *c : components) {
         c->display(&painter);
     }
 
     if (tempComponent) {
         tempComponent->display(&painter);
     }
-
 }
 
 void Canvas::resizeEvent(QResizeEvent *event)
@@ -94,7 +91,6 @@ void Canvas::resizeEvent(QResizeEvent *event)
 
 void Canvas::mousePressEvent(QMouseEvent *event)
 {
-
     if (event->button() == Qt::LeftButton) {
         QPoint currPos = event->pos();
         qDebug() << currPos;
@@ -106,19 +102,18 @@ void Canvas::mousePressEvent(QMouseEvent *event)
             // TODO; create new "widget" according to type
 
             switch (type) {
-            case BUTTON:
-            {
+            case BUTTON: {
                 tempComponent = new Button(currPos, currPos, Qt::black);
                 break;
             }
-            case CONTAINER:{
+            case CONTAINER: {
                 tempComponent = new Container(currPos, currPos, Qt::black);
                 break;
             }
             default:
                 break;
             }
-            if (tempComponent){
+            if (tempComponent) {
                 for (Component *comp : components) {
                     Container *container = dynamic_cast<Container *>(comp);
                     if (container && container->inside(currPos)) {
@@ -161,14 +156,12 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
         qDebug() << currPos;
 
         QPoint start = tempComponent->getStartPoint();
-        Component * rootContainer = tempComponent->inside(start);
+        Component *rootContainer = tempComponent->inside(start);
 
         dragging = false;
 
         if (design) {
-            
             update();
         }
     }
-
 }

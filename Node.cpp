@@ -1,9 +1,9 @@
 #include "Node.h"
-#include <fstream> 
+#include <fstream>
 #include <ostream>
 
 Node::Node(std::string name)
-: tagName(name)
+    : tagName(name)
 {}
 
 Node::~Node()
@@ -25,7 +25,6 @@ Node *Node::removeChild()
 
 void Node::printNode(std::ofstream &os, int level, FileType File)
 {
-
     if (tagName.back() == '/') {
         tagName.pop_back();
     }
@@ -59,100 +58,98 @@ void Node::printNodeInFile(std::ofstream &of, int level, FileType file)
     }
 
     switch (file) {
-        case JSON: {
+    case JSON: {
+        for (int i = 0; i < level; i++) {
+            of << "  ";
+        }
+        // name-Block
+        of << "{\n";
+        for (int i = 0; i < level + 1; i++) {
+            of << "  ";
+        }
+        std::string name = diffuseTagName(tagName);
+        of << "\"name\": \"" << name << "\"";
+        for (auto &[key, value] : Attribute) {
+            of << ",\n";
+            for (int i = 0; i < level + 1; i++)
+                of << "  ";
+            of << "\"" << key << "\": \"" << value << "\"";
+        }
+        // children-Block
+        if (children.empty()) {
+            of << "\n";
             for (int i = 0; i < level; i++) {
                 of << "  ";
             }
-            // name-Block
-            of << "{\n";
+            of << "}";
+        } else {
+            of << ",\n";
             for (int i = 0; i < level + 1; i++) {
                 of << "  ";
             }
-            std::string name = diffuseTagName(tagName);
-            of << "\"name\": \"" << name << "\"";
-            for (auto &[key, value] : Attribute) {
-                of << ",\n";
-                for (int i = 0; i < level + 1; i++)
-                    of << "  ";
-                of << "\"" << key << "\": \"" << value << "\"";
+            of << "\"children\": [\n";
+            for (int i = 0; i < children.size(); i++) {
+                children[i]->printNodeInFile(of, level + 1, file);
+                if (i < children.size() - 1) {
+                    of << ",\n";
+                } else {
+                    of << "\n";
+                }
             }
-            // children-Block
-            if (children.empty()) {
-                of << "\n";
-                for (int i = 0; i < level; i++) {
-                    of << "  ";
-                }
-                of << "}";
-            } else {
-                of << ",\n";
-                for (int i = 0; i < level + 1; i++) {
-                    of << "  ";
-                }
-                of << "\"children\": [\n";
-                for (int i = 0; i < children.size(); i++) {
-                    children[i]->printNodeInFile(of, level + 1, file);
-                    if (i < children.size() - 1) {
-                        of << ",\n";
-                    } else {
-                        of << "\n";
-                    }
-                }
-                for (int i = 0; i < level + 1; i++) {
-                    of << "  ";
-                }
-                of << "]\n";
-                for (int i = 0; i < level; i++) {
-                    of << "  ";
-                }
-                of << "}";
+            for (int i = 0; i < level + 1; i++) {
+                of << "  ";
             }
-        } break;
-
-        case XML:{
-            std::string name = diffuseTagName(tagName);
-
+            of << "]\n";
             for (int i = 0; i < level; i++) {
                 of << "  ";
             }
-            // name-Block
-            if (name[0] == ' '){
-                name.erase(name.begin());
-            }
-            of <<"<"<<name;
-
-            if (!this->Attribute.empty()){
-
-                for (auto &[key, value] : Attribute) {
-                    of <<key << "=\"" << value << "\"";
-                }
-            }
-            // children-Block
-            if (children.empty()) {
-                of << "/>\n";
-            } else {
-                of << ">\n";
-                for (int i = 0; i < level + 1; i++) {
-                    of << "  ";
-                }
-                for (int i = 0; i < children.size(); i++) {
-                    children[i]->printNodeInFile(of, level + 1, file);
-                }
-                for (int i = 0; i < level + 1; i++) {
-                    of << "  ";
-                }
-
-                of << "</" << name << ">\n";
-            }
-
+            of << "}";
         }
+    } break;
+
+    case XML: {
+        std::string name = diffuseTagName(tagName);
+
+        for (int i = 0; i < level; i++) {
+            of << "  ";
+        }
+        // name-Block
+        if (name[0] == ' ') {
+            name.erase(name.begin());
+        }
+        of << "<" << name;
+
+        if (!this->Attribute.empty()) {
+            for (auto &[key, value] : Attribute) {
+                of << key << "=\"" << value << "\"";
+            }
+        }
+        // children-Block
+        if (children.empty()) {
+            of << "/>\n";
+        } else {
+            of << ">\n";
+            for (int i = 0; i < level + 1; i++) {
+                of << "  ";
+            }
+            for (int i = 0; i < children.size(); i++) {
+                children[i]->printNodeInFile(of, level + 1, file);
+            }
+            for (int i = 0; i < level + 1; i++) {
+                of << "  ";
+            }
+
+            of << "</" << name << ">\n";
+        }
+
+    } break;
+    case NONE: {
+        std::cout << "keine Datei" << std::endl;
         break;
-        case NONE: {
-            std::cout << "keine Datei" << std::endl;
-            break;
-        }
+    }
 
-        default:
-            break;
+    default:
+        break;
     }
 }
 
@@ -191,37 +188,34 @@ int Node::getChildLen()
     return children.size();
 }
 
-std::string Node::diffuseTagName(std::string fullName){
-
+std::string Node::diffuseTagName(std::string fullName)
+{
     std::string name;
 
-    if (fullName.find(' ')!=std::string::npos){
-
+    if (fullName.find(' ') != std::string::npos) {
         if (fullName.back() == '/') {
             fullName.pop_back();
         }
         if (fullName.back() == ' ') {
             fullName.pop_back();
         }
-        int i = fullName.find(' ')+1;
-        name = fullName.substr(0,i);
+        int i = fullName.find(' ') + 1;
+        name = fullName.substr(0, i);
         for (int var = 2; var < fullName.length(); ++var) {
-            if(fullName.find('=')!=std::string::npos){
-                int j = fullName.find('=',i);
-                std::string attributeName = fullName.substr(i,(j-i));
-                int k = fullName.find("\"",j+2);
-                std::string attributeValue = fullName.substr((j+2),(k-j-2));
-                this->setAttribute(attributeName,attributeValue);
-                if (fullName.find(' ',k)!=std::string::npos){
-                    i = fullName.find(" ",k)+1;
+            if (fullName.find('=') != std::string::npos) {
+                int j = fullName.find('=', i);
+                std::string attributeName = fullName.substr(i, (j - i));
+                int k = fullName.find("\"", j + 2);
+                std::string attributeValue = fullName.substr((j + 2), (k - j - 2));
+                this->setAttribute(attributeName, attributeValue);
+                if (fullName.find(' ', k) != std::string::npos) {
+                    i = fullName.find(" ", k) + 1;
                 }
             }
         }
-    }
-    else {
+    } else {
         name = fullName;
     }
 
     return name;
-
 }

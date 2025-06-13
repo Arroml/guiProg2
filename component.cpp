@@ -1,21 +1,24 @@
 #include "component.h"
 
-Component::Component(QPoint start, QPoint end, QColor color):start(start), end(end), color(color) {}
+Component::Component(QPoint start, QPoint end, QColor color)
+    : start(start)
+    , end(end)
+    , color(color)
+{}
 
-Component::~Component(){
+Component::~Component() {}
 
-}
-
-std::string Component::getStartSting(){
+std::string Component::getStartString()
+{
     return std::to_string(start.x()) + " " + std::to_string(start.y());
 }
 
-std::string Component::getEndString(){
+std::string Component::getEndString()
+{
     return std::to_string(start.x()) + " " + std::to_string(start.y());
 }
 
-QPoint Component::getStartPoint(){
+QPoint Component::getStartPoint()
+{
     return this->start;
 }
-
-

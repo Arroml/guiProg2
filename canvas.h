@@ -1,12 +1,12 @@
 #ifndef CANVAS_H
 #define CANVAS_H
+#include <QColor>
 #include <QFrame>
 #include <QPoint>
-#include <QColor>
-#include <vector>
+#include "Node.h"
 #include "component.h"
 #include "container.h"
-#include "Node.h"
+#include <vector>
 
 class Canvas : public QFrame
 {
@@ -40,10 +40,8 @@ private:
     QColor activeCol;
     bool design;
     WidgetMode type;
-    std::vector<Component*> components;
-    Component* tempComponent = nullptr;
-
-
+    std::vector<Component *> components;
+    Component *tempComponent = nullptr;
 };
 
 #endif // CANVAS_H
