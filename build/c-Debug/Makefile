@@ -200,6 +200,30 @@ allesCopieren_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/allesCopieren_autogen.dir/build.make CMakeFiles/allesCopieren_autogen.dir/build
 .PHONY : allesCopieren_autogen/fast
 
+Node.o: Node.cpp.o
+.PHONY : Node.o
+
+# target to build an object file
+Node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/allesCopieren.dir/build.make CMakeFiles/allesCopieren.dir/Node.cpp.o
+.PHONY : Node.cpp.o
+
+Node.i: Node.cpp.i
+.PHONY : Node.i
+
+# target to preprocess a source file
+Node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/allesCopieren.dir/build.make CMakeFiles/allesCopieren.dir/Node.cpp.i
+.PHONY : Node.cpp.i
+
+Node.s: Node.cpp.s
+.PHONY : Node.s
+
+# target to generate assembly for a file
+Node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/allesCopieren.dir/build.make CMakeFiles/allesCopieren.dir/Node.cpp.s
+.PHONY : Node.cpp.s
+
 allesCopieren_autogen/mocs_compilation.o: allesCopieren_autogen/mocs_compilation.cpp.o
 .PHONY : allesCopieren_autogen/mocs_compilation.o
 
@@ -383,6 +407,9 @@ help:
 	@echo "... allesCopieren_autogen"
 	@echo "... allesCopieren_autogen_timestamp_deps"
 	@echo "... allesCopieren"
+	@echo "... Node.o"
+	@echo "... Node.i"
+	@echo "... Node.s"
 	@echo "... allesCopieren_autogen/mocs_compilation.o"
 	@echo "... allesCopieren_autogen/mocs_compilation.i"
 	@echo "... allesCopieren_autogen/mocs_compilation.s"

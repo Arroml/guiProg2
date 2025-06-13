@@ -439,6 +439,12 @@
 	"HEADERS" : 
 	[
 		[
+			"/Users/alexanderroman/Projekte/prog2/allesCopieren/Node.h",
+			"MU",
+			"EWIEGA46WW/moc_Node.cpp",
+			null
+		],
+		[
 			"/Users/alexanderroman/Projekte/prog2/allesCopieren/button.h",
 			"MU",
 			"EWIEGA46WW/moc_button.cpp",
@@ -528,6 +534,11 @@
 	"SETTINGS_FILE" : "/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug/CMakeFiles/allesCopieren_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/Users/alexanderroman/Projekte/prog2/allesCopieren/Node.cpp",
+			"MU",
+			null
+		],
 		[
 			"/Users/alexanderroman/Projekte/prog2/allesCopieren/button.cpp",
 			"MU",

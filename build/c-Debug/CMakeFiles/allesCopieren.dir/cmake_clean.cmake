@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/allesCopieren_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/allesCopieren_autogen.dir/ParseCache.txt"
   "allesCopieren_autogen"
+  "CMakeFiles/allesCopieren.dir/Node.cpp.o"
+  "CMakeFiles/allesCopieren.dir/Node.cpp.o.d"
   "CMakeFiles/allesCopieren.dir/allesCopieren_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/allesCopieren.dir/allesCopieren_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/allesCopieren.dir/button.cpp.o"

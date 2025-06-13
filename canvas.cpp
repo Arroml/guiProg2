@@ -45,20 +45,7 @@ void Canvas::setWidgetMode(int mode)
     if (type != NONE) {
         if (components.empty()) {
             Component *root = nullptr;
-
-            switch (type) {
-            case CONTAINER:
-            {
-                QPoint start(20,20);
-                QPoint end(this->width()-20, this->height()-60);
-                root = new Container(start, end, Qt::darkGray);
-
-                break;
-            }
-            default:
-                break;
-            }
-
+            root = new Container(QPoint(0,0), QPoint(width(),height()), Qt::darkGray);
             if (root != nullptr) {
                 components.push_back(root);
                 qDebug() << "Root wurde erstellt.";
@@ -172,23 +159,9 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
         dragging = false;
 
         if (design) {
-            tempComponent->update(currPos);  // setze Endpunkt final
+            tempComponent->update(currPos);
             qDebug() << "Finale Position gesetzt";
 
-            // versuche es in einen Container einzufügen
-            bool added = false;
-            for (Component* c : components) {
-                if (Container* cont = dynamic_cast<Container*>(c)) {
-                    if (cont->inside(lastPos)) {
-                        cont->addComponent(tempComponent);
-                        added = true;
-                        break;
-                    }
-                }
-                // TODO; finalize created widget
-
-            }
-            lastPos = currPos;
 
             update();
         }

@@ -6,6 +6,7 @@
 #include <vector>
 #include "component.h"
 #include "container.h"
+#include "node.h"
 
 class Canvas : public QFrame
 {

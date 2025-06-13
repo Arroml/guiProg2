@@ -16,8 +16,8 @@ set(PROJECT_SOURCES
         main.cpp
 
 
-
 )
+
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(allesCopieren
@@ -29,7 +29,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         button.h button.cpp
         container.h container.cpp
         canvas.cpp canvas.h
-
+        Node.cpp Node.h
      )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET allesCopieren APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

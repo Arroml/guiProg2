@@ -27,8 +27,8 @@ void Container::update(QPoint & point, bool done){
 }
 
 Component* Container::inside(QPoint & point){
-    for (Component* i : components){
-        if (Component * res = i->inside(point)){
+    for (Component*  child: components){
+        if (Component * res = child->inside(point)){
             return res;
         }
         return QRect(start, end).contains(point) ? this : nullptr;

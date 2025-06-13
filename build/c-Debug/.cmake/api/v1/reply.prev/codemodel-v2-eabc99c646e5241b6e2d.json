@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-077421c4197e6ba85f1f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "allesCopieren",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "allesCopieren::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-allesCopieren-Debug-4861b46b9d5151c6747d.json",
+					"name" : "allesCopieren",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "allesCopieren_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-allesCopieren_autogen-Debug-94fe670169ed8f8d9d3f.json",
+					"name" : "allesCopieren_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "allesCopieren_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-allesCopieren_autogen_timestamp_deps-Debug-ce2d2694c94eefbae47a.json",
+					"name" : "allesCopieren_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/alexanderroman/Projekte/prog2/allesCopieren/build/c-Debug",
+		"source" : "/Users/alexanderroman/Projekte/prog2/allesCopieren"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
