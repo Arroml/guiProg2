@@ -17,11 +17,11 @@ Paint::Paint(QWidget *parent)
 {
     // Menüleiste erstellen
     QMenuBar *menuBar = new QMenuBar(this);
-    QMenu *fileMenu = new QMenu("File", this);
+    QMenu *fileMenu = new QMenu("Prak4", this);
 
     QAction *loadFile = fileMenu->addAction("Load File");
     QAction *saveFile = fileMenu->addAction("Save File");
-    QAction *quit = fileMenu->addAction("Save File");
+    QAction *quit = fileMenu->addAction("Quit");
 
     connect(loadFile, &QAction::triggered, this, []() { qDebug() << "Load File wurde gedrückt"; });
     connect(saveFile, &QAction::triggered, this, []() { qDebug() << "save File Wurde gedrückt"; });
