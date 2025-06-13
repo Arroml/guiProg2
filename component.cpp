@@ -22,3 +22,7 @@ QPoint Component::getStartPoint()
 {
     return this->start;
 }
+
+void Component::setNode(){
+
+}

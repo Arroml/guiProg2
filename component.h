@@ -3,10 +3,12 @@
 #include <QColor>
 #include <QPainter>
 #include <QPoint>
+#include "Node.h"
 
 class Component
 {
 protected:
+    Node node;
     QPoint start, end;
     QColor color;
 
@@ -19,6 +21,8 @@ public:
     std::string getStartString();
     std::string getEndString();
     QPoint getStartPoint();
+    void setNode(Node node);
+    Node getNode();
 };
 
 #endif // COMPONENT_H
