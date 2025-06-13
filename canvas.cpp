@@ -156,12 +156,17 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
         qDebug() << "Finale Position gesetzt";
         qDebug() << currPos;
 
+
         Node node(type==BUTTON? "Button" : "Container");
 
+        node.setAttribute("endPos=\"" ,tempComponent->getEndString()+"\"");
+        node.setAttribute("startPos=\"" ,tempComponent->getStartString()+"\"");
         QPoint start = tempComponent->getStartPoint();
 
         Component * rootComponent = tempComponent->inside(start);
         Container * rootContainer = dynamic_cast<Container*>(rootComponent );
+
+        rootContainer->setNode(node);
 
         rootContainer->addComponent(tempComponent);
 
