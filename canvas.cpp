@@ -156,7 +156,15 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
         qDebug() << currPos;
 
         QPoint start = tempComponent->getStartPoint();
+<<<<<<< HEAD
         Component *rootContainer = tempComponent->inside(start);
+=======
+        Component * rootComponent = tempComponent->inside(start);
+        Container * rootContainer = dynamic_cast<Container*>(rootComponent );
+
+        rootContainer->addComponent(tempComponent);
+
+>>>>>>> 5cbd88670f1092633c31f9ab02dcec79f432da5e
 
         dragging = false;
 
