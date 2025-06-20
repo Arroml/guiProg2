@@ -160,19 +160,23 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
 
         QPoint start = tempComponent->getStartPoint();
 
-        Component * rootComponent = components[0]->inside(start);
-        Container * rootContainer = dynamic_cast<Container*>(rootComponent );
-        if (rootContainer == nullptr) {
-            qDebug() << "rootContainer ist NULL!";
-            return;
-        }
-        if (tempComponent == nullptr) {
-            qDebug() << "tempComponent ist NULL!";
+        Component* rootComponent = components[0]->inside(start);
+
+        if (!rootComponent) {
+            qDebug() << "rootComponent ist nullptr";
             return;
         }
 
+        qDebug() << "typeid: " << typeid(*rootComponent).name();  // Debug-Ausgabe
+
+        Container* rootContainer = dynamic_cast<Container*>(rootComponent);
+        if (!rootContainer) {
+            qDebug() << "Cast fehlgeschlagen – kein Container!";
+            return;
+        }
+
+
         if (rootComponent != nullptr){
-            qDebug() << "kein Nullpointer";
             rootContainer->addComponent(tempComponent);
             rootContainer->addChild(tempComponent);
         }else{
