@@ -2,10 +2,13 @@
 #include <QDebug>
 #include <QMouseEvent>
 #include <QPainter>
+#include <fstream>
+#include <ostream>
 #include "button.h"
 #include "container.h"
 #include "Node.h"
 #include <typeinfo>
+#include <filesystem>
 
 Canvas::Canvas(QWidget *parent)
     : QFrame(parent)
@@ -157,18 +160,33 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
         qDebug() << currPos;
 
 
-        Node node(type==BUTTON? "Button" : "Container");
 
-        node.setAttribute("endPos=\"" ,tempComponent->getEndString()+"\"");
-        node.setAttribute("startPos=\"" ,tempComponent->getStartString()+"\"");
+
+        tempComponent->setTagName(type==BUTTON? "Button" : "Container");
+
+
+        tempComponent->setAttribute("endPos=\"" ,tempComponent->getEndString()+"\"");
+        tempComponent->setAttribute("startPos=\"" ,tempComponent->getStartString()+"\"");
+
         QPoint start = tempComponent->getStartPoint();
 
         Component * rootComponent = tempComponent->inside(start);
         Container * rootContainer = dynamic_cast<Container*>(rootComponent );
+        if (rootContainer == nullptr) {
+            qDebug() << "rootContainer ist NULL!";
+            return;
+        }
+        if (tempComponent == nullptr) {
+            qDebug() << "tempComponent ist NULL!";
+            return;
+        }
 
-        rootContainer->setNode(node);
-
-        rootContainer->addComponent(tempComponent);
+        if (rootComponent != nullptr){
+            qDebug() << "tes";
+            rootContainer->addComponent(tempComponent);
+            rootContainer->addChild(tempComponent);
+        }else{
+        }
 
         dragging = false;
 
@@ -176,4 +194,16 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
             update();
         }
     }
+}
+
+void Canvas::writeToXmlFile(std::string fileName){
+
+    std::ofstream of ("../../../../../output/"+fileName);
+    if (!of.is_open()){
+
+        qDebug() << "File konnte nicht geööffnet werden";
+        return;
+    }
+
+    components[0]->printNodeInFile(of,0,Node::XML);
 }

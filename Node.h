@@ -32,6 +32,7 @@ public:
     std::string getAttribute(const std::string &name);
     void printAttributes(std::ostream &out, int level = 0);
     int getChildLen();
+    void setTagName(std::string name);
 };
 
 #endif //NODE_H

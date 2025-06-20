@@ -24,7 +24,9 @@ Paint::Paint(QWidget *parent)
     QAction *quit = fileMenu->addAction("Quit");
 
     connect(loadFile, &QAction::triggered, this, []() { qDebug() << "Load File wurde gedrückt"; });
-    connect(saveFile, &QAction::triggered, this, []() { qDebug() << "save File Wurde gedrückt"; });
+    connect(saveFile, &QAction::triggered, this, [this]() {
+        this->viewport->writeToXmlFile("saveDrawing.xml");
+    });
     connect(quit, &QAction::triggered, this, &QWidget::close);
 
     menuBar->addMenu(fileMenu);

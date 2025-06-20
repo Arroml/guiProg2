@@ -229,3 +229,7 @@ std::string Node::diffuseTagName(std::string fullName)
 
     return name;
 }
+
+void Node::setTagName(std::string name){
+    this->tagName = name;
+}

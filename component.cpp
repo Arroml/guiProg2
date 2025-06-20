@@ -3,8 +3,8 @@
 Component::Component(QPoint start, QPoint end, QColor color)
     : start(start)
     , end(end)
-    , color(color)
-    ,node("")
+    , color(color),
+    Node("Component")
 {}
 
 Component::~Component() {}
@@ -25,5 +25,4 @@ QPoint Component::getStartPoint()
 }
 
 void Component::setNode(Node node){
-    this->node = node;
 }

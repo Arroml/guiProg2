@@ -5,10 +5,9 @@
 #include <QPoint>
 #include "Node.h"
 
-class Component
+class Component:public Node
 {
 protected:
-    Node node;
     QPoint start, end;
     QColor color;
 
@@ -23,6 +22,7 @@ public:
     QPoint getStartPoint();
     void setNode(Node node);
     Node getNode();
+
 };
 
 #endif // COMPONENT_H

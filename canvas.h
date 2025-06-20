@@ -25,6 +25,7 @@ public:
     void setWidgetMode(int mode);
     void setInteractionMode(bool mode);
     void setObjColor(const QColor &col);
+    void writeToXmlFile(std::string fileName);
 
 protected:
     void paintEvent(QPaintEvent *event);
@@ -41,6 +42,7 @@ private:
     bool design;
     WidgetMode type;
     std::vector<Component *> components;
+
     Component *tempComponent = nullptr;
 };
 
