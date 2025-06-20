@@ -174,11 +174,12 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
             qDebug() << "Cast fehlgeschlagen – kein Container!";
             return;
         }
+        Component * bufferComp = tempComponent;
 
 
         if (rootComponent != nullptr){
-            rootContainer->addComponent(tempComponent);
-            rootContainer->addChild(tempComponent);
+            rootContainer->addComponent(bufferComp);
+            rootContainer->addChild(bufferComp);
         }else{
         }
 
@@ -187,6 +188,7 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
         if (design) {
             update();
         }
+        tempComponent = nullptr;
     }
 }
 

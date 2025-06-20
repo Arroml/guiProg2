@@ -16,7 +16,7 @@ std::string Component::getStartString()
 
 std::string Component::getEndString()
 {
-    return std::to_string(start.x()) + " " + std::to_string(start.y());
+    return std::to_string(end.x()) + " " + std::to_string(end.y());
 }
 
 QPoint Component::getStartPoint()

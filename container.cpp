@@ -45,5 +45,5 @@ Component *Container::inside(QPoint &point)
     if (QRect(start, end).contains(point)) {
         return this;
     }
-
+    return nullptr;
 }

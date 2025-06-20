@@ -121,7 +121,7 @@ void Node::printNodeInFile(std::ofstream &of, int level, FileType file)
             of << "<" << name;
         }
         else {
-            for (int i = 0; i < level-1; i++) {
+            for (int i = 0; i < level; i++) {
                 of << "  ";
             }
             of << "<" << name;
@@ -140,13 +140,13 @@ void Node::printNodeInFile(std::ofstream &of, int level, FileType file)
             }
         } else {
             of << ">\n";
-            for (int i = 0; i < level + 1; i++) {
+            for (int i = 0; i < level ; i++) {
                 of << "  ";
             }
             for (int i = 0; i < children.size(); i++) {
                 children[i]->printNodeInFile(of, level + 1, file);
             }
-            for (int i = 0; i < level + 1; i++) {
+            for (int i = 0; i < level ; i++) {
                 of << "  ";
             }
 
