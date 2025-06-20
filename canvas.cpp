@@ -37,7 +37,8 @@ QSize Canvas::sizeHint() const
 
 void Canvas::clearCanvas(void)
 {
-    tempComponent = nullptr;
+    components.clear();
+
     update();
 }
 
@@ -98,7 +99,6 @@ void Canvas::mousePressEvent(QMouseEvent *event)
         QPoint currPos = event->pos();
         qDebug() << currPos;
 
-        dragging = true;
         lastPos = currPos;
 
         if (design) {
@@ -106,11 +106,17 @@ void Canvas::mousePressEvent(QMouseEvent *event)
 
             switch (type) {
             case BUTTON: {
+                dragging = true;
                 tempComponent = new Button(currPos, currPos, Qt::black);
                 break;
             }
             case CONTAINER: {
+                dragging = true;
                 tempComponent = new Container(currPos, currPos, Qt::black);
+                break;
+            }
+            case NONE:{
+                return;
                 break;
             }
             default:

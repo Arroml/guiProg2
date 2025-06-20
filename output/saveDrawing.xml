@@ -1,8 +1,0 @@
-<Component>
-  <Container endPos="423 347" startPos="123 125">
-          <Button endPos="340 274" startPos="175 156"/>
-    <Container endPos="415 283" startPos="375 244">
-                <Button endPos="392 275" startPos="385 262"/>
-      </Container>
-  </Container>
-</Component>
