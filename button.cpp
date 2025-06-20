@@ -8,7 +8,7 @@ void Button::display(QPainter *painter)
 {
     QRect rect = QRect(start, end).normalized();
     painter->setPen(Qt::black);
-    painter->setBrush(Qt::NoBrush);
+    painter->setBrush(color);
     painter->drawRect(rect);
     painter->drawText(rect.adjusted(5, 5, -5, -5), Qt::AlignLeft | Qt::AlignTop, "Button");
 }

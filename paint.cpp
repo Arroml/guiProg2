@@ -50,10 +50,11 @@ Paint::Paint(QWidget *parent)
     lblWidgetModes->setBuddy(cobWidgetModes);
 
     btnChangeCol = new QPushButton("&Set Color");
-    btnChangeCol->setDisabled(true);
+
     cbIMode = new QCheckBox("&Design Mode");
+
+
     cbIMode->setChecked(true);
-    cbIMode->setDisabled(true);
 
     // create layout and add gui elements to it
     QGridLayout *mainLayout = new QGridLayout;
@@ -94,6 +95,7 @@ void Paint::clearBtnPressed()
 void Paint::colorBtnPressed()
 {
     QColor color(QColorDialog::getColor(startColor, this));
+
     if (color.isValid()) {
         qDebug() << "Color Choosen : " << color.name();
         viewport->setObjColor(color);

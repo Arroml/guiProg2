@@ -14,14 +14,22 @@ Container::~Container()
 
 void Container::addComponent(Component *component)
 {
-    this->components.push_back(component);
+    QRect childRect = QRect(component->getStartPoint(), component->getEndPoint()).normalized();
+    QRect thisRect = QRect(start, end).normalized();
+
+    QRect newBounds = thisRect.united(childRect); // Qt liefert automatisch das kleinste umschließende Rechteck
+
+    start = newBounds.topLeft();
+    end   = newBounds.bottomRight();
+
+    components.push_back(component);
 }
 
 void Container::display(QPainter *painter)
 {
     QRect rect = QRect(start, end).normalized();
     painter->setPen(Qt::gray);
-    painter->setBrush(Qt::NoBrush);
+    painter->setBrush(color);
     painter->drawRect(rect);
     for (Component *i : components) {
         i->display(painter);

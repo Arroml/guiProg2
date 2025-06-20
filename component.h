@@ -19,6 +19,9 @@ public:
     virtual Component *inside(QPoint &point) = 0;
     std::string getStartString();
     std::string getEndString();
+    QColor getColor();
+
+    QPoint getEndPoint();
     QPoint getStartPoint();
     void setNode(Node node);
     Node getNode();

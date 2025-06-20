@@ -49,7 +49,7 @@ void Canvas::setWidgetMode(int mode)
     if (type != NONE) {
         if (components.empty()) {
             Component *root = nullptr;
-            root = new Container(QPoint(0, 0), QPoint(width(), height()), Qt::darkGray);
+            root = new Container(QPoint(0, 0), QPoint(width(), height()), Qt::white);
             if (root != nullptr) {
                 components.push_back(root);
                 qDebug() << "Root wurde erstellt.";
@@ -107,12 +107,12 @@ void Canvas::mousePressEvent(QMouseEvent *event)
             switch (type) {
             case BUTTON: {
                 dragging = true;
-                tempComponent = new Button(currPos, currPos, Qt::black);
+                tempComponent = new Button(currPos, currPos, activeCol);
                 break;
             }
             case CONTAINER: {
                 dragging = true;
-                tempComponent = new Container(currPos, currPos, Qt::black);
+                tempComponent = new Container(currPos, currPos, activeCol);
                 break;
             }
             case NONE:{
@@ -164,6 +164,9 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
         tempComponent->setAttribute(" endPos" ,tempComponent->getEndString());
         tempComponent->setAttribute(" startPos" ,tempComponent->getStartString());
 
+        QColor color = tempComponent->getColor();
+        tempComponent->setAttribute(" fillColor", std::to_string(color.rgb()));
+
         QPoint start = tempComponent->getStartPoint();
 
         Component* rootComponent = components[0]->inside(start);
@@ -180,7 +183,16 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
             qDebug() << "Cast fehlgeschlagen – kein Container!";
             return;
         }
+
         Component * bufferComp = tempComponent;
+
+
+        if (check_if_smal(bufferComp)){
+            delete bufferComp;
+            tempComponent = nullptr;
+            update();
+            return;
+        }
 
 
         if (rootComponent != nullptr){
@@ -196,6 +208,22 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
         }
         tempComponent = nullptr;
     }
+}
+
+bool Canvas::check_if_smal(Component* comp){
+    int minSize= 10;
+    QPoint start = tempComponent->getStartPoint();
+    QPoint end = tempComponent->getEndPoint();
+
+    int widhth = end.x()-start.x();
+    int height = end.y()-start.y();
+
+    if (widhth < minSize || height < minSize){
+        return true;
+    }
+    return false;
+
+
 }
 
 void Canvas::writeToXmlFile(std::string fileName){

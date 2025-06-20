@@ -26,6 +26,7 @@ public:
     void setInteractionMode(bool mode);
     void setObjColor(const QColor &col);
     void writeToXmlFile(std::string fileName);
+    bool check_if_smal(Component* comp);
 
 protected:
     void paintEvent(QPaintEvent *event);

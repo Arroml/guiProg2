@@ -34,3 +34,12 @@ void Component::setEnd(QPoint &point){
 void Component::setStart(QPoint &point){
     this->start = point;
 }
+
+QPoint Component::getEndPoint(){
+    return this->end;
+
+}
+
+QColor Component::getColor(){
+    return this->color;
+}
