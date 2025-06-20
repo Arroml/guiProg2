@@ -37,7 +37,6 @@ QSize Canvas::sizeHint() const
 
 void Canvas::clearCanvas(void)
 {
-    components.clear();
     tempComponent = nullptr;
     update();
 }
@@ -118,15 +117,6 @@ void Canvas::mousePressEvent(QMouseEvent *event)
                 break;
             }
             if (tempComponent) {
-                for (Component *comp : components) {
-                    Container *container = dynamic_cast<Container *>(comp);
-                    if (container && container->inside(currPos)) {
-                        container->addComponent(tempComponent);
-                        qDebug() << "Komponente wurde in Container eingefügt";
-                        return;
-                    }
-                }
-                components.push_back(tempComponent);
                 qDebug() << "Komponente wurde zu Canvas hinzgefügt";
             }
         }
@@ -165,12 +155,12 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
         tempComponent->setTagName(type==BUTTON? "Button" : "Container");
 
 
-        tempComponent->setAttribute("endPos=\"" ,tempComponent->getEndString()+"\"");
-        tempComponent->setAttribute("startPos=\"" ,tempComponent->getStartString()+"\"");
+        tempComponent->setAttribute(" endPos" ,tempComponent->getEndString());
+        tempComponent->setAttribute(" startPos" ,tempComponent->getStartString());
 
         QPoint start = tempComponent->getStartPoint();
 
-        Component * rootComponent = tempComponent->inside(start);
+        Component * rootComponent = components[0]->inside(start);
         Container * rootContainer = dynamic_cast<Container*>(rootComponent );
         if (rootContainer == nullptr) {
             qDebug() << "rootContainer ist NULL!";
@@ -182,7 +172,7 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
         }
 
         if (rootComponent != nullptr){
-            qDebug() << "tes";
+            qDebug() << "kein Nullpointer";
             rootContainer->addComponent(tempComponent);
             rootContainer->addChild(tempComponent);
         }else{

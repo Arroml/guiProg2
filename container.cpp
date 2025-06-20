@@ -1,4 +1,5 @@
 #include "container.h"
+#include <QDebug>
 
 Container::Container(QPoint start, QPoint end, QColor color)
     : Component(start, end, color)
@@ -34,10 +35,15 @@ void Container::update(QPoint &point, bool done)
 
 Component *Container::inside(QPoint &point)
 {
-    for (Component *child : components) {
-        if (Component *res = child->inside(point)) {
-            return res;
+    for (Component* child : components) {
+        Component* found = child->inside(point);
+        if (found != nullptr) {
+            return found;
         }
-        return QRect(start, end).contains(point) ? this : nullptr;
     }
+
+    if (QRect(start, end).contains(point)) {
+        return this;
+    }
+
 }

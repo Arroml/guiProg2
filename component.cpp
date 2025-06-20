@@ -26,3 +26,11 @@ QPoint Component::getStartPoint()
 
 void Component::setNode(Node node){
 }
+
+void Component::setEnd(QPoint &point){
+    this->end = point;
+}
+
+void Component::setStart(QPoint &point){
+    this->start = point;
+}

@@ -23,6 +23,9 @@ public:
     void setNode(Node node);
     Node getNode();
 
+    void setStart(QPoint &point);
+    void setEnd(QPoint &point);
+
 };
 
 #endif // COMPONENT_H
