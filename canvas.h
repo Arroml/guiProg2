@@ -7,6 +7,7 @@
 #include "component.h"
 #include "container.h"
 #include <vector>
+#include "button.h"
 
 class Canvas : public QFrame
 {
@@ -29,6 +30,7 @@ public:
     void setObjColor(const QColor &col);
     void writeToXmlFile(std::string fileName);
     bool check_if_smal(Component* comp);
+    void addEventLinsterer(Button *btn);
 
 protected:
     void paintEvent(QPaintEvent *event);
@@ -45,6 +47,8 @@ private:
     bool design;
     WidgetMode type;
     std::vector<Component *> components;
+
+    int buttonZahl = 1;
 
     Component *tempComponent = nullptr;
 };

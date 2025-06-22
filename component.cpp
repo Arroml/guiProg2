@@ -43,3 +43,13 @@ QPoint Component::getEndPoint(){
 QColor Component::getColor(){
     return this->color;
 }
+
+void Component::attach(Observer observer){
+    observers.push_back(observer);
+}
+
+void Component::notify(){
+    for (auto &i : observers){
+        i();
+    }
+}

@@ -919,6 +919,7 @@
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/limits.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdarg.h \
   /Users/alexanderroman/Projekte/prog2/allesCopieren/Node.h \
+  /Users/alexanderroman/Projekte/prog2/allesCopieren/button.h \
   /Users/alexanderroman/Projekte/prog2/allesCopieren/component.h \
   /Users/alexanderroman/Projekte/prog2/allesCopieren/container.h \
   /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/QPoint \

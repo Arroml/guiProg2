@@ -5,12 +5,16 @@
 
 class Button : public Component
 {
+private:
+    QString text = "normaler Button";
 public:
     Button();
     Button(QPoint start, QPoint end, QColor color = Qt::black);
     void display(QPainter *painter) override;
     void update(QPoint &point, bool done = false) override;
     Component *inside(QPoint &point) override;
+    QString getText();
+    void setText(QString text);
 };
 
 #endif // BUTTON_H

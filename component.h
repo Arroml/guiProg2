@@ -4,12 +4,16 @@
 #include <QPainter>
 #include <QPoint>
 #include "Node.h"
+#include <vector>
+
+typedef std::function<void()> Observer;
 
 class Component:public Node
 {
 protected:
     QPoint start, end;
     QColor color;
+    std::vector<Observer> observers;
 
 public:
     Component(QPoint start, QPoint end, QColor color = Qt::black);
@@ -25,6 +29,9 @@ public:
     QPoint getStartPoint();
     void setNode(Node node);
     Node getNode();
+
+    void attach(Observer observer);
+    void notify();
 
 
     void setStart(QPoint &point);

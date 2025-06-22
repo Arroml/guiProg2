@@ -81,6 +81,8 @@ Paint::Paint(QWidget *parent)
     connect(cobWidgetModes, SIGNAL(activated(int)), this, SLOT(widgetModeChanged(int)));
     // connect checkbox to toggle interaction handler
     connect(cbIMode, SIGNAL(toggled(bool)), this, SLOT(interactModeChanged(bool)));
+
+
 }
 
 /** d'tor */

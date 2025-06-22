@@ -10,7 +10,7 @@ void Button::display(QPainter *painter)
     painter->setPen(Qt::black);
     painter->setBrush(color);
     painter->drawRect(rect);
-    painter->drawText(rect.adjusted(5, 5, -5, -5), Qt::AlignLeft | Qt::AlignTop, "Button");
+    painter->drawText(rect.adjusted(5, 5, -5, -5), Qt::AlignLeft | Qt::AlignTop, text);
 }
 
 void Button::update(QPoint &point, bool done)
@@ -21,4 +21,12 @@ void Button::update(QPoint &point, bool done)
 Component *Button::inside(QPoint &point)
 {
     return QRect(start, end).contains(point) ? this : nullptr;
+}
+
+QString Button::getText(){
+    return this->text;
+}
+
+void Button::setText(QString text){
+    this->text = text;
 }

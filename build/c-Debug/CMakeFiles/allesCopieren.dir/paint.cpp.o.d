@@ -1228,4 +1228,5 @@ CMakeFiles/allesCopieren.dir/paint.cpp.o: \
   /opt/homebrew/lib/QtGui.framework/Headers/qpainter.h \
   /opt/homebrew/include/QtGui/qtextoption.h \
   /opt/homebrew/include/QtGui/qpen.h \
-  /Users/alexanderroman/Projekte/prog2/allesCopieren/container.h
+  /Users/alexanderroman/Projekte/prog2/allesCopieren/container.h \
+  /Users/alexanderroman/Projekte/prog2/allesCopieren/button.h
