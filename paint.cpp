@@ -23,7 +23,10 @@ Paint::Paint(QWidget *parent)
     QAction *saveFile = fileMenu->addAction("Save File");
     QAction *quit = fileMenu->addAction("Quit");
 
-    connect(loadFile, &QAction::triggered, this, []() { qDebug() << "Load File wurde gedrückt"; });
+    connect(loadFile, &QAction::triggered, this, [this]() {
+        viewport->loadFile();
+    });
+
     connect(saveFile, &QAction::triggered, this, [this]() {
         this->viewport->writeToXmlFile("saveDrawing.xml");
     });

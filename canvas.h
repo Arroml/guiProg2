@@ -18,6 +18,8 @@ public:
     Canvas(QWidget *parent = 0);
     ~Canvas();
 
+    void loadFile();
+
     QSize minimumSizeHint() const;
     QSize sizeHint() const;
 
