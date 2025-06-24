@@ -232,7 +232,7 @@ bool Canvas::check_if_smal(Component *comp) {
 
 void Canvas::writeToXmlFile(std::string fileName) {
 
-    std::ofstream of("../../../../../output/" + fileName);
+    std::ofstream of("../../../../gitPr1/guiProg2/output/" + fileName);
     if (!of.is_open()) {
 
         qDebug() << "File konnte nicht geööffnet werden";
