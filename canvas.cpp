@@ -150,7 +150,7 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event) {
             tempComponent->setAttribute(" startPos", tempComponent->getStartString());
 
             QColor color = tempComponent->getColor();
-            tempComponent->setAttribute(" fillColor", std::to_string(color.rgb()));
+            tempComponent->setAttribute(" fillColor", std::to_string(color.rgba()));
 
             QPoint start = tempComponent->getStartPoint();
 
@@ -243,7 +243,7 @@ bool Canvas::check_if_smal(Component *comp) {
 
 void Canvas::writeToXmlFile(std::string fileName) {
 
-    std::ofstream of("../../../../gitPr1/guiProg2/output/" + fileName); // only for me because stupid qt or stupid me LG.AlexA
+    std::ofstream of("../../../../../output/" + fileName); // only for me because stupid qt or stupid me LG.AlexA
     if (!of.is_open()) {
 
         qDebug() << "File konnte nicht geöffnet werden";
@@ -286,7 +286,8 @@ void Canvas::loadFile() {
             continue;
         }
 
-        int x1, x2, y1, y2, color;
+        int x1, x2, y1, y2;
+        long color;
 
         int posStart = line.find("startPos=\"");
         if (posStart != std::string::npos) {
@@ -310,6 +311,8 @@ void Canvas::loadFile() {
 
         QPoint end(x2, y2);
 
+        std::string bufferCol;
+
         int posColor = line.find("fillColor=\"");
         if (posColor != std::string::npos) {
             posColor += 11;
@@ -317,8 +320,15 @@ void Canvas::loadFile() {
             std::string inhalt = line.substr(posColor, endquote - posColor);
             std::istringstream iss(inhalt);
             iss >> color;
+            qDebug() << "color im String: ";
+            qDebug() << color;
         }
-        QColor fillColor = QColor::fromRgb(color);
+        long buffer = 4291493913;
+
+        QColor fillColor = QColor::fromRgba(color);
+        qDebug() << "color: ";
+        qDebug() << fillColor;
+
 
         if (line.find("Container") != std::string::npos) {
 
@@ -328,7 +338,7 @@ void Canvas::loadFile() {
             container->setAttribute(" endPos", container->getEndString());
             container->setAttribute(" startPos", container->getStartString());
             QColor color = container->getColor();
-            container->setAttribute(" fillColor", std::to_string(color.rgb()));
+            container->setAttribute(" fillColor", std::to_string(color.rgba()));
 
             Component *rootComponent = components[0]->inside(start);
 
@@ -353,11 +363,13 @@ void Canvas::loadFile() {
             qDebug() << "in Button";
 
             Button *button = new Button(start, end, fillColor);
+            qDebug() << "color: ";
+            qDebug() << fillColor;
             button->setTagName("Container");
             button->setAttribute(" endPos", button->getEndString());
             button->setAttribute(" startPos", button->getStartString());
             QColor color = button->getColor();
-            button->setAttribute(" fillColor", std::to_string(color.rgb()));
+            button->setAttribute(" fillColor", std::to_string(color.rgba()));
             button->setText("Button " + QString::number(buttonZahl));
             buttonZahl++;
 

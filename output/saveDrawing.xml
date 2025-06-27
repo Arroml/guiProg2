@@ -1,7 +1,5 @@
 <Component>
-  <Container endPos="451 357" fillColor="4290822336" startPos="175 105">
-          <Button endPos="343 203" fillColor="4287722176" startPos="207 140"/>
-        <Button endPos="383 265" fillColor="4287722176" startPos="335 249"/>
-        <Button endPos="422 342" fillColor="4287722176" startPos="265 305"/>
-  </Container>
+    <Button endPos="434 204" fillColor="4291493934" startPos="298 87"/>
+    <Button endPos="236 360" fillColor="4291493934" startPos="99 208"/>
+    <Button endPos="559 426" fillColor="4278205131" startPos="415 312"/>
 </Component>
