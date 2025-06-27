@@ -16,8 +16,9 @@ Paint::Paint(QWidget *parent)
     : QWidget(parent)
 {
     // Menüleiste erstellen
+    QWidget::setWindowTitle ("Praktikum 5");
     QMenuBar *menuBar = new QMenuBar(this);
-    QMenu *fileMenu = new QMenu("Prak4", this);
+    QMenu *fileMenu = new QMenu("Options", this);
 
     QAction *loadFile = fileMenu->addAction("Load File");
     QAction *saveFile = fileMenu->addAction("Save File");

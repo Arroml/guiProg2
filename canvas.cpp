@@ -220,9 +220,20 @@ bool Canvas::check_if_smal(Component *comp) {
     int minSize = 10;
     QPoint start = tempComponent->getStartPoint();
     QPoint end = tempComponent->getEndPoint();
+    int widhth,height;
 
-    int widhth = end.x() - start.x();
-    int height = end.y() - start.y();
+    if(start.x()<end.x()){
+        widhth = end.x() - start.x();
+    }
+    else {
+        widhth = start.x() - end.x();
+    }
+    if(start.y()<end.y()){
+        height = end.y() - start.y();
+    }
+    else {
+        height = start.y() - end.y();
+    }
 
     if (widhth < minSize || height < minSize) {
         return true;
@@ -232,10 +243,10 @@ bool Canvas::check_if_smal(Component *comp) {
 
 void Canvas::writeToXmlFile(std::string fileName) {
 
-    std::ofstream of("../../../../gitPr1/guiProg2/output/" + fileName);
+    std::ofstream of("../../../../gitPr1/guiProg2/output/" + fileName); // only for me because stupid qt or stupid me LG.AlexA
     if (!of.is_open()) {
 
-        qDebug() << "File konnte nicht geööffnet werden";
+        qDebug() << "File konnte nicht geöffnet werden";
         return;
     }
 
@@ -347,6 +358,8 @@ void Canvas::loadFile() {
             button->setAttribute(" startPos", button->getStartString());
             QColor color = button->getColor();
             button->setAttribute(" fillColor", std::to_string(color.rgb()));
+            button->setText("Button " + QString::number(buttonZahl));
+            buttonZahl++;
 
             Component *rootComponent = components[0]->inside(start);
 
@@ -375,6 +388,8 @@ void Canvas::loadFile() {
         }
         update();
     }
+
+
 }
 
 void Canvas::addEventLinsterer(Button *btn) {
